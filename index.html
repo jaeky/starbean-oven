@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fff4d6">
+  <meta name="description" content="그림과 손동작을 따라 피자를 굽고 손님에게 건네는 오프라인 놀이">
+  <title>별콩 화덕</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="game.js" defer></script>
+</head>
+<body>
+  <main class="shell">
+    <section class="lobby" id="lobby" aria-labelledby="title">
+      <h1 id="title"><span aria-hidden="true">✦</span> 별콩 화덕</h1>
+      <button id="start" class="menu" type="button" aria-label="피자 만들기">
+        <img src="menu.jpg" alt="">
+        <span class="play-icon" aria-hidden="true">▶</span>
+      </button>
+    </section>
+    <section id="kitchen" class="kitchen" aria-labelledby="kitchen-title" hidden>
+      <h1 class="sr" id="kitchen-title" tabindex="-1">별콩 피자 만들기</h1>
+      <div class="navigation">
+        <button class="nav" id="home" type="button" aria-label="놀이 고르기"><span aria-hidden="true">🏠</span></button>
+        <button class="nav" id="sound" type="button" aria-label="효과음" aria-pressed="true"><span aria-hidden="true">🔊</span></button>
+      </div>
+      <div class="stations">
+        <div class="oven-station">
+          <button id="oven" class="oven" type="button" aria-label="화덕에 넣기" disabled>
+            <span class="oven-mantle" aria-hidden="true"></span>
+            <span class="oven-mouth" aria-hidden="true"><span class="fire"></span></span>
+          </button>
+          <button id="cooked" class="cooked" type="button" aria-label="구운 피자 집기" hidden></button>
+        </div>
+        <button id="board" class="board" type="button" aria-label="피자 작업대"></button>
+        <button id="guest" class="guest" type="button" aria-label="손님에게 피자 건네기" disabled>
+          <span class="order" id="order" aria-hidden="true"></span>
+          <img src="guest.png" alt="">
+          <span class="served-mark" aria-hidden="true">✓</span>
+        </button>
+      </div>
+      <div class="dock">
+        <div id="supplies" class="supplies" role="group" aria-label="재료"></div>
+        <div id="bake-progress" class="bake-progress" aria-hidden="true" hidden><span></span></div>
+        <button id="replay" class="replay" type="button" aria-label="다시 만들기" hidden><span aria-hidden="true">↻</span></button>
+      </div>
+      <p class="sr" id="guide" role="status"></p>
+      <div class="confetti" id="confetti" aria-hidden="true" hidden><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    </section>
+  </main>
+  <span id="hand" class="hand" aria-hidden="true" hidden>👆</span>
+  <div class="ghost" id="ghost" aria-hidden="true" hidden></div>
+  <noscript><p>피자 놀이를 시작하려면 JavaScript를 켜 주세요.</p></noscript>
+</body>
+</html>
